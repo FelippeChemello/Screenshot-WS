@@ -21,7 +21,7 @@ async function takeScreenshot(url, largura = 1920, altura = 1080, timeout = 3000
     try {
         const path = 'example.png';
 
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({ignoreDefaultArgs: ['--disable-extensions']});
         const page = await browser.newPage();
         await page.setViewport({
             width: parseInt(largura),
